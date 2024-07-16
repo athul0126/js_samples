@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temp</title>
+    <style>
+        .container{
+            background-color: red;
+            width: 600px;
+            height: 600px;
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+
+        }
+        .newdiv{
+            background-color: green;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    </div>
+    <button id="mybtn">click to create div</button>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const btn=document.getElementById('mybtn');
+            btn.addEventListener('click',()=>{
+                const newDiv=document.createElement("div");
+                newDiv.classList.add('newdiv');
+                document.querySelector(".container").appendChild(newDiv);
+            })
+        })
+    </script>
+</body>
+</html>

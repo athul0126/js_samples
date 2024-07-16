@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple API integration</title>
+</head>
+<body>
+    <h1>API SAMPLE</h1>
+    <div class="parent"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded",async ()=>{
+            const BASEURL='https://jsonplaceholder.typicode.com/posts';
+        try{
+            const response= await fetch(BASEURL);
+            const data=await response.json();
+            console.log(data);
+            data.forEach((d)=>{
+                const datas=document.createElement("li");
+                datas.textContent=d.title;
+                document.querySelector(".parent").appendChild(datas);
+            })
+        }
+        catch(err){
+            console.log(err);
+        }
+        })
+    </script>
+</body>
+</html>

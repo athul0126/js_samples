@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color-box</title>
+    <style>
+        #color-box{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="color-box"></div>
+    <button id="color-btn">Change color</button>
+    <script>
+        const colors=['blue','yellow','black','pink','orange','red','green'];
+        const colorBtn=document.getElementById('color-btn');
+        colorBtn.addEventListener("click",function(){
+            console.log("njanaaaa",Math.floor(Math.random()*8))
+            
+        })
+    </script>
+</body>
+</html>

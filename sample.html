@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>map function</title>
+  </head>
+  <body>
+    <div class="parent">
+      <button id="double-btn">double</button>
+      <p id="old-arr"></p>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const parent = document.querySelector(".parent");
+        const doubleBtn = document.getElementById("double-btn");
+        const arr = [10, 20, 30, 40, 50];
+        document.getElementById('old-arr').textContent=JSON.stringify(arr);
+        doubleBtn.addEventListener("click", () => {
+           const doubleArry=arr.map((m)=>m*2);
+           const para=document.createElement("p");
+           para.textContent=JSON.stringify(doubleArry);
+           parent.appendChild(para);
+        });
+      });
+
+    </script>
+  </body>
+</html>

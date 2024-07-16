@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>counter App</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      h1,
+      p {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        height: 400px;
+        background-color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Counter App</h1>
+      <div>
+        <button id="increment">increment</button>
+        <button id="decrement">decrement</button>
+        <button id="reset">Reset</button>
+      </div>
+      <h1 id="counter">0</h1>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let count = 0;
+        const counter = document.getElementById("counter");
+        const increment = document.getElementById("increment");
+        const decrement = document.getElementById("decrement");
+        const reset = document.getElementById("reset");
+        const updateCounter=()=>{
+            counter.innerText=count;
+        }
+        increment.addEventListener("click", ()=> {
+          count++;
+          updateCounter();
+        });
+        decrement.addEventListener("click", ()=> {
+          if(count>0){
+            count--;
+          }
+          updateCounter();
+        });
+        reset.addEventListener("click", ()=> {
+          count = 0;
+          updateCounter();
+        });
+      });
+    </script>
+  </body>
+</html>
